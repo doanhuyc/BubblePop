@@ -1,0 +1,60 @@
+Nom : DOAN HUY CUONG
+Code : DOAC08059001
+
+		
+
+
+		RAPPORT DU DEVOIR 1
+		          BUBBLEPOPS
+
+
+I) Description et utilisation de vos fonctions :
+      Mon programme contient 4 classes : Boule.java 
+					     Groupe.java
+					     Board.java
+					     Main.java
+       
+  La classe Boule  contient les fonctions Boule(row , col , couleur , isMark,Effacer) qui sont appéles pour creer une Boule au row-ieme ligne et col-ieme colonne . En plus la variable (int) Couleur indique la couleur du boule et les variables boolean is Mark et Effacer pour indiquer s'elle est marqueé  ou effaceé.
+  La classe Board contient leplupart la logic du jeu . Il contient les fonctions principales:
+	-void GameInit(): Commencer du jeu en creeant une tableau de Boule de 2 dimensions
+	-Boolean isEmpty(int x, int y): Verifier si la position (row x , col y) est dans le playground ou non
+	-void findsameMarked(int row, int col): trouver les Boules adjacent de la Boule(row ,col) et ils ont le meme couleurs et puis on change leurs variable isMark en true
+	-Boolean isPlaygroundSolvable();Verifier si le playground reste encore les Boules adjacent de meme couleur
+  La classe Main contient la fonction main() du programme !!
+
+
+II) Algorithme(s) + justifications:
+          L'algorithme que j'ai ultilisé dans la fonction findsameMarked est recursive.
+Une Boule ( row , col)  a 4 Boules adjacents qui sont Boule1(row+1,col) ; Boule2(row,col+1) ; Boule3(row-1,col) et Boule4(row,col-1) 
+     Donc on commence à comparer la Boule et Boule1 . S'ils ont la meme couleur on change leurs isMark=true et  on passe à comparer la Boule1 avec ses adjacents mais il ne faut pas recomparer Boule1 avec Boule pourque le programme ne soit pas boucler à infini . Donc dans chaque if () j'ai ajouté une condition if (isMark==false) et on va comparer la couleur.
+    Il faut faire attention aux Boules qui sont au bordes du Panel. Par exemple Boule(0,11) qui est au top-right du playground et il n'a que 2 Boules adjacents qui sont Boule1(1;11) et Boule2(0;10) . Donc il faut ajouter les conditions pourque le programme puisse fonctionner
+
+III) Améliorations possible :
+   Mon programme peut :
+	-dessiner l'interface du jeu avec une tableau de [10][12] Boules (playground) avec les couleurs au hasard 
+	-Verifier si le playground contient encore les Groupes des Boules de meme couleur ou non .
+	-Trouver les Groupes des Boules adjacents de meme couleurs et les noircir lorsque l’utilisateur déplace le curseur 
+	-Calculer le point total et BubblePops = n*(n-1) puis les afficher  dans le Panellorsque l’utilisateur déplace le curseur et clique la souris
+	-Effacer une boule lorsque l’utilisateur clique la souris
+	-Afficher une message de GameOver quand on a 500 Points en total
+	-Deplacer une Boule à une novelle place
+
+  Limites de mon programme ! 
+	Je n' arrive pas à faire disparaitre une groupe de Boule quand on clique la souris.
+
+
+
+          
+
+
+
+
+  
+
+
+
+
+
+
+
+
